@@ -5,7 +5,7 @@ import datetime as dt
 import click
 
 
-
+"""updates"""
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -53,6 +53,11 @@ def get_filters():
         month = choice("\nWhich months would you like to filter data from? "
                        "Once again, please use commas to list multiple.\n>",
                        months)
+
+        if "june" in month:
+            print("\nThis is a winter month! There may be less data for "
+                  "this time.")
+
         day = choice("\nWhich day would you like to filter data from? "
                      "You know the drill by now, please use commas to list "
                      "multiple days.\n>", weekdays)
