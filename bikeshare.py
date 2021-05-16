@@ -5,7 +5,7 @@ import datetime as dt
 import click
 
 
-"""updates"""
+
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -32,8 +32,8 @@ def choice(prompt, choices=('y', 'n')):
             choice = [i.strip().lower() for i in choice.split(',')]
             if list(filter(lambda x: x in choices, choice)) == choice:
                 break
-        prompt = ("\nOops, something has gone horribly wrong! Please check your"
-                  "formatting and enter a valid option:\n>")
+        prompt = ("\nOops, something has gone horribly wrong!\nPlease check "
+                  "your formatting and enter a valid option:\n>")
     return choice
 
 
@@ -47,21 +47,23 @@ def get_filters():
     """
     print("Type end at any time if you would like to exit me.\n")
     while True:
-        city = choice("Which city / cities data would you like to analayse? "
-                      "New York City, Chicago or Washington? Please use commas "
+        city = choice("---\n\nWhich city / cities data would you like to "
+                      "analayze?\n"
+                      "New York City, Chicago or Washington?\nPlease use commas "
                       "to list multiple.\n>", CITY_DATA.keys())
-        month = choice("\nWhich months would you like to filter data from? "
-                       "Once again, please use commas to list multiple.\n>",
+        month = choice("\n---\n\nWhich months would you like to filter data from?\n"
+                       "Once again, please use commas to list multiple.\n"
+                       "(jan, feb, mar, apr, may, jun).\n>",
                        months)
 
         if "june" in month:
             print("\nThis is a winter month! There may be less data for "
                   "this time.")
 
-        day = choice("\nWhich day would you like to filter data from? "
+        day = choice("\n---\n\nWhich day would you like to filter data from?\n"
                      "You know the drill by now, please use commas to list "
                      "multiple days.\n>", weekdays)
-        confirmation = choice("\nPlease confirm the filters you have chosen. "
+        confirmation = choice("\n---\n\nPlease confirm the filters you have chosen. "
                               "\n\n City/Cities: {}\n Month/Months: "
                               "{}\n Day/Days"
                               ": {}\n\n [y] Yes\n [n] No\n\n>"
