@@ -10,8 +10,8 @@ Udacity VersionControl!!! :O
 This is an assignment using Git and GitHub!!! <3
 
 ### Files used
-Include the files used!!! 100
+Include the files used!!! 
 
 ### Credits
-Thanks Udacity!!! I like this course a lot
+Thanks Udacity!!! I like this course a lot, very fun :D
 
